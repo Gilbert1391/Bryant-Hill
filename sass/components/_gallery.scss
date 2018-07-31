@@ -1,0 +1,28 @@
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__img {
+    width: calc(100% / 4 - 1rem);
+    height: 25rem;
+    object-fit: cover;
+    margin: .5rem;
+    cursor: pointer;
+  }
+}
+
+.section-gallery {
+  width: 74%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10rem;
+
+  &__img {
+    width: calc(100% / 3 - 1rem);
+    height: 22.5rem;
+    object-fit: cover;
+    margin: .5rem;
+    cursor: pointer;
+  }
+}

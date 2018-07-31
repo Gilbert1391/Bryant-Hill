@@ -1,0 +1,107 @@
+.container {
+  padding: 9rem;
+}
+
+.container-big {
+  padding: 10rem 13rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: $color-dark-green;
+
+  &__title {
+    font-family: 'Playfair Display';
+    margin-right: auto;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  font-family: 'calluna';
+
+  &__link {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-white;
+    margin: 1rem 2rem;
+
+    &--contact {
+      letter-spacing: 1px;
+      background-color: rgba(163,163,163,.2);
+      padding: 1rem 2rem;
+      @include transition;
+
+      &:hover {
+        background-color: rgba(163,163,163,.7);
+      }
+    }
+  }
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__content {
+    position: absolute;
+    width: 20rem;
+    height: 0;
+    padding-top: 3rem;
+    z-index: 1;
+    background-color: $color-dark-green;
+    opacity: 0;
+    visibility: hidden;
+    @include transition;
+  }
+
+  &__link {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $color-white;
+    text-decoration: none;
+    display: block;
+    margin: 1rem 1.5rem;
+  }
+}
+
+.nav-dropdown:hover .nav-dropdown__content {
+  height: 22rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer {
+  color: $color-white;
+
+  &__upper {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-light-green;
+    padding: 4.5rem 20rem;
+  }
+
+  &__lower {
+    background-color: $color-dark-green;
+    padding: 8rem 0;
+  }
+
+  &__adress {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.8);
+    text-align: center;
+  }
+}
