@@ -151,8 +151,14 @@
     right: 0;
     background-color: $color-dark-green;
     opacity: 0;
+    visibility: hidden;
     z-index: 10;
     transition: all 200ms ease-out;
+
+    @include responsive(phone) {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__link {
