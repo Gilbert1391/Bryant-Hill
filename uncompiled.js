@@ -5,6 +5,9 @@ document.querySelector('#main').insertAdjacentHTML('beforeend', `
   <img src="img/prev.png" alt="Previous button" class="overlay__btn" id="overlayPrev">
   <img src="img/hg-1.jpg" alt="Interior view" class="overlay__img">
   <img src="img/next.png" alt="Next button" class="overlay__btn" id="overlayNext">
+  <div class="overlay__btns-phone">
+   <img src="img/prev.png" alt="Previous button" class="overlay__btn" id="overlayPrev">
+   <img src="img/next.png" alt="Next button" class="overlay__btn" id="overlayNext">
 </div>`);
 
 // Show elements based on section

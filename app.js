@@ -1,7 +1,7 @@
 'use strict';
 
 // Inject template to html structure
-document.querySelector('#main').insertAdjacentHTML('beforeend', '\n<div class="overlay">\n  <button class="overlay__close-icon" id="closeOverlay">&times;</button>\n  <img src="img/prev.png" alt="Previous button" class="overlay__btn" id="overlayPrev">\n  <img src="img/hg-1.jpg" alt="Interior view" class="overlay__img">\n  <img src="img/next.png" alt="Next button" class="overlay__btn" id="overlayNext">\n</div>');
+document.querySelector('#main').insertAdjacentHTML('beforeend', '\n<div class="overlay">\n  <button class="overlay__close-icon" id="closeOverlay">&times;</button>\n  <img src="img/prev.png" alt="Previous button" class="overlay__btn" id="overlayPrev">\n  <img src="img/hg-1.jpg" alt="Interior view" class="overlay__img">\n  <img src="img/next.png" alt="Next button" class="overlay__btn" id="overlayNext">\n  <div class="btns-phone">\n   <img src="img/prev.png" alt="Previous button" class="btns-phone__btn" id="overlayPrev">\n   <img src="img/next.png" alt="Next button" class="btns-phone__btn" id="overlayNext">\n</div>')
 
 // Show elements based on section
 var query = document.querySelector('.gallery');
@@ -69,3 +69,13 @@ function initMap() {
     window.open('https://www.google.com/maps/place/52+Vaucluse+Rd,+Vaucluse+NSW+2030,+Australia/@-33.8557167,151.2674218,19z/data=!3m1!4b1!4m5!3m4!1s0x6b12ac4e2c442009:0x6ba2f7c3db1e7240!8m2!3d-33.8557167!4d151.267969', '_blank');
   });
 };
+
+// Phone navigation
+document.querySelector('.phone-nav__button').addEventListener('click', function() {
+ var body = document.querySelector('body');
+ body.classList.toggle('hide-body');
+});
+
+document.querySelector('#showDropDown').addEventListener('click', function() {
+  document.querySelector('.phone-nav__dropdown').classList.toggle('phone-dropdown');
+})

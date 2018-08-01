@@ -10,6 +10,17 @@
   flex-direction: column;
   margin-right: auto;
 
+  @include responsive(phone) {
+   display: none;
+  }
+
+  &--contact {
+    display: flex;
+    @include responsive(phone) {
+     width: 100%;
+    }
+  }
+
   &__heading {
     font-size: 2.6rem;
     font-weight: 300;
@@ -40,6 +51,14 @@
 
 .section-group {
   width: 75%;
+
+  @include responsive(tab-land) { //widh < 1200px?
+   width: 65%;
+ }
+
+ @include responsive(phone) {
+  width: 100%;
+ }
 
   &__img {
     width: 100%;

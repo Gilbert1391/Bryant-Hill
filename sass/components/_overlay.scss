@@ -14,14 +14,29 @@
   visibility: hidden;
   @include transition;
 
+  @include responsive(phone) {
+   flex-direction: column;
+   padding: 2rem 0;
+  }
+
   &__img {
     height: 100%;
     margin: 0 auto;
+
+    @include responsive(phone) {
+     height: 80%;
+     width: 100%;
+     object-fit: contain;
+    }
   }
 
   &__btn {
     height: 2.5rem;
     cursor: pointer;
+
+    @include responsive(phone) {
+     display: none;
+    }
   }
 
   &__close-icon {
@@ -40,4 +55,21 @@
 .showOverlay {
   opacity: 1;
   visibility: visible;
+}
+
+.btns-phone {
+  display: none;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 2rem;
+
+  @include responsive(phone) {
+   display: flex;
+   justify-content: space-between;
+  }
+
+  &__btn {
+    height: 2.5rem;
+    cursor: pointer;
+  }
 }

@@ -1,9 +1,34 @@
 .container {
   padding: 9rem;
+
+  @include responsive(tab-land) { //widh < 1200px?
+   padding: 9rem 3.5rem;
+  }
+
+ @include responsive(phone-land) { //widh < 740px?
+  padding: 9rem 2rem;
+  }
+
+  @include responsive(phone) {
+   padding: 4rem 2rem;
+  }
+
+  @include responsive(big-desktop) {
+    max-width: 150rem;
+    margin: 0 auto;
+  }
 }
 
 .container-big {
   padding: 10rem 13rem;
+
+  @include responsive(tab-land) { //widh < 1200px?
+   padding: 8rem 3.5rem;
+ }
+ @include responsive(big-desktop) {
+   max-width: 150rem;
+   margin: 0 auto;
+ }
 }
 
 .header {
@@ -27,6 +52,10 @@
   display: flex;
   align-items: center;
   font-family: 'calluna';
+
+  @include responsive(phone) {
+   display: none;
+  }
 
   &__link {
     font-size: 1.3rem;
@@ -82,6 +111,106 @@
   visibility: visible;
 }
 
+// Phone nav
+.phone-nav {
+  display: none;
+
+  @include responsive(phone) {
+    display: block;
+  }
+
+  &__dropdown {
+    display: none;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: .2rem;
+    right: .5rem;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__navigation {
+    width: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    padding: 2rem;
+    top: 4rem;
+    right: 0;
+    background-color: $color-dark-green;
+    opacity: 0;
+    z-index: 10;
+    transition: all 200ms ease-out;
+  }
+
+  &__link {
+    display: inline-block;
+    font-family: 'calluna';
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__checkbox:checked ~ &__navigation {
+    width: 60%;
+    opacity: 1;
+  }
+
+  // ICON
+
+  &__icon {
+    position: relative;
+    display: flex;
+
+    &, &::before, &::after {
+      width: 2rem;
+      height: 2px;
+      background: $color-white;
+      display: inline-block;
+    }
+
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 300ms;
+    }
+
+    &::before { top: -.8rem; }
+    &::after { top: .8rem; }
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+// Footer
 .footer {
   color: $color-white;
 
@@ -90,11 +219,24 @@
     justify-content: space-between;
     background-color: $color-light-green;
     padding: 4.5rem 20rem;
+
+    @include responsive(tab-port) {
+     padding: 4.5rem 4rem;
+   }
+
+   @include responsive(phone) {
+    flex-direction: column;
+    h2 {margin-bottom: 2rem}
+   }
   }
 
   &__lower {
     background-color: $color-dark-green;
     padding: 8rem 0;
+
+    @include responsive(phone) {
+     padding: 8rem 2rem;
+    }
   }
 
   &__adress {
@@ -104,4 +246,12 @@
     color: rgba(255,255,255,.8);
     text-align: center;
   }
+}
+
+.hide-body {
+  overflow: hidden;
+}
+
+.phone-dropdown {
+  display: block;
 }

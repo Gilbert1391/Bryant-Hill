@@ -3,6 +3,11 @@
   margin: 0 auto;
   padding-left: 5rem;
 
+  @include responsive(phone) {
+   padding-left: 0;
+   margin-top: 4rem;
+  }
+
   &__group {
     width: 100%;
     color: rgba(61,61,61,.6);
